@@ -27,9 +27,12 @@ Setup a JSON configuration file like the example below which will monitor `my-pa
         {
             "queue_url": "https://sqs.us-east-1.amazonaws.com/12345/test-child-2"
         }
-    ]
+    ],
+    "wait_time_seconds":10 #optional time that the thread will long poll the parent queue, default = 10
 }
 ```
+
+
 
 
 # Running

@@ -37,7 +37,6 @@ class SqsBunny
         log.debug "No messages"
       end
       break unless keep_polling?
-      sleep 1
     end
   end
 
