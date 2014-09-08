@@ -1,0 +1,13 @@
+{
+    "parent_q": {
+        "queue_url": "https://sqs.us-east-1.amazonaws.com/123/test"
+    },
+     "children": [
+        {
+            "queue_url": "https://sqs.us-east-1.amazonaws.com/123/test-child"
+        },
+        {
+            "queue_url": "https://sqs.us-east-1.amazonaws.com/123/test-child-2"
+        }
+    ]
+}

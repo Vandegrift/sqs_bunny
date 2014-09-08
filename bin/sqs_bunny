@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'sqs_bunny'
+if ARGV[0]
+  SqsBunny.run(ARGV[0])
+else
+  puts "You must pass the configuration file as the first parameter."
+end
