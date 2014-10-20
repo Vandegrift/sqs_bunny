@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'sqs_bunny'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2014-09-08'
   s.summary     = "Copy Amazon SQS messages from one master queue to multiple child queues"
   s.description     = "Polls a single SQS queue and copies the body of any messages to a configurable set of child queues then deletes the message from the parent."
