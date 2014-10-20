@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Brian Glick"]
   s.email       = 'brian@brian-glick.com'
   s.files       = ["lib/sqs_bunny.rb"]
-  s.require_path = 'lib'
+  s.require_paths = ['lib']
   s.homepage    =
     'https://github.com/Vandegrift/sqs_bunny'
   s.license       = 'Apache 2.0'
