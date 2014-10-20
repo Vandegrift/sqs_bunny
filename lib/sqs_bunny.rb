@@ -1,5 +1,7 @@
 require 'json'
 require 'aws-sdk-core'
+require 'logger'
+
 ##
 # Main execution class, just call +SqsBunny.run+ and pass in the path of your configuration file
 
@@ -40,16 +42,18 @@ class SqsBunny
     end
   end
 
-  #private stuff
   def send_message client, message
     return unless @config['children']
     @config['children'].each do |child|
       client.send_message(queue_url:child['queue_url'],message_body:message.body)
     end
   end
+
+  # This method can be overidden to provide your own polling stop semantics
   def keep_polling?
     @config['poll_max'].nil? || @poll_count < @config['poll_max']
   end
+
   class NullLogger < Logger
     def initialize(*args)
     end
@@ -57,8 +61,9 @@ class SqsBunny
     def add(*args, &block)
     end
   end
-  def log
-    @logger ||= NullLogger.new
-  end
-  private :keep_polling?; :log
+
+  private 
+    def log
+      @logger ||= NullLogger.new
+    end
 end
